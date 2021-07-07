@@ -1,7 +1,6 @@
 package com.vincent.profile_ui.ui
 
 import android.content.Context
-import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.SpannableString
@@ -42,7 +41,7 @@ class LoginFragment : Fragment() {
                 it?.let { resource ->
                     when (resource.status) {
                         Status.SUCCESS -> {
-                            Toast.makeText(this@LoginFragment.activity, "LOGIN SUCCESS", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this@LoginFragment.activity, "LOGIN SUCCESS", Toast.LENGTH_SHORT).show()
 
                             val loginData: LoginData = it.data!!.data
 //                            var intent: Intent = Intent()
@@ -59,11 +58,11 @@ class LoginFragment : Fragment() {
                             activity?.finish()
                         }
                         Status.ERROR -> {
-                            Toast.makeText(this@LoginFragment.activity, "LOGIN ERROR", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this@LoginFragment.activity, "LOGIN ERROR", Toast.LENGTH_SHORT).show()
 
                         }
                         Status.LOADING -> {
-                            Toast.makeText(this@LoginFragment.activity, "LOADING", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this@LoginFragment.activity, "LOADING", Toast.LENGTH_SHORT).show()
                         }
                     }
 

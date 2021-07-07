@@ -11,11 +11,11 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 val viewModelsModule = module {
-    viewModel { HomeViewModel(get<MainRepository>()) }
+    viewModel { HomeViewModel(get(), get()) }
 }
 
 val repositoryModule = module {
-    single { MainRepository(get<APIHelper>()) }
+    single { MainRepository(get()) }
 }
 
 val remoteModule = module {
@@ -27,8 +27,8 @@ val remoteModule = module {
             .build()
     }
 
-    single<APIHelper> {
-        APIHelper(get<AdidasService>())
+    single {
+        APIHelper(get())
     }
 
     single<AdidasService> {

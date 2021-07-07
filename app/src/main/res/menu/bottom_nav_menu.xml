@@ -4,11 +4,11 @@
 
     <item
         android:id="@+id/homeFragment"
-        android:icon="@mipmap/star"
+        android:icon="@mipmap/menu"
         tools:ignore="MenuTitle" />
 
     <item
         android:id="@+id/starFragment"
-        android:icon="@mipmap/star"
+        android:icon="@mipmap/star_grey"
         tools:ignore="MenuTitle" />
 </menu>

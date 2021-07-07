@@ -7,57 +7,65 @@
     android:background="@color/backgroundLight"
     tools:context=".ui.home.HomeFragment">
 
-    <RelativeLayout
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
+
 
         <RelativeLayout
-            android:id="@+id/layout_avatar"
             android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:padding="@dimen/dp_16">
+            android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/imageView_avatar"
-                android:layout_width="88dp"
-                android:layout_height="88dp"
-                android:src="@mipmap/avatar_default" />
+            <RelativeLayout
+                android:id="@+id/layout_avatar"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:padding="@dimen/dp_16">
 
-            <TextView
-                android:id="@+id/textViewName"
-                android:layout_width="wrap_content"
+                <ImageView
+                    android:id="@+id/imageView_avatar"
+                    android:layout_width="88dp"
+                    android:layout_height="88dp"
+                    android:src="@mipmap/avatar_default" />
+
+                <TextView
+                    android:id="@+id/textViewName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@id/imageView_avatar"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:text="Welcome!"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    />
+
+                <TextView
+                    android:id="@+id/textView_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/imageView_avatar"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:text="Click here to login"
+                    android:textSize="14sp"/>
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewNews"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_toRightOf="@id/imageView_avatar"
-                android:layout_marginLeft="@dimen/dp_20"
-                android:text="Welcome!"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                />
-
-            <TextView
-                android:id="@+id/textView_user"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/imageView_avatar"
-                android:layout_alignParentBottom="true"
-                android:layout_marginLeft="@dimen/dp_20"
-                android:text="Click here to login"
-                android:textSize="14sp"/>
+                android:layout_below="@id/layout_avatar"
+                android:overScrollMode="never"
+                app:layoutManager="GridLayoutManager"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                tools:itemCount="20"
+                tools:listitem="@layout/item_news"
+                tools:spanCount="1" />
 
         </RelativeLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewNews"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/layout_avatar"
-            android:overScrollMode="never"
-            app:layoutManager="GridLayoutManager"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            tools:itemCount="20"
-            tools:listitem="@layout/item_news"
-            tools:spanCount="1" />
-
-    </RelativeLayout>
 </FrameLayout>

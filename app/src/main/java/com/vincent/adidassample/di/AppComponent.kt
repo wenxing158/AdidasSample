@@ -8,5 +8,6 @@ val appComponent = listOf(
     repositoryModule,
     remoteModule,
     loginViewModelsModule,
-    loginRepositoryModule
+    loginRepositoryModule,
+    databaseModule
 )

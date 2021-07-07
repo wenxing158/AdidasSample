@@ -28,7 +28,20 @@
         android:id="@+id/starFragment"
         android:name="com.vincent.adidassample.ui.star.StarFragment"
         android:label="fragment_star"
-        tools:layout="@layout/fragment_star" />
+        tools:layout="@layout/fragment_star" >
+
+        <action
+            android:id="@+id/action_navigation_star_to_navigation_news_detail"
+            app:destination="@id/newsDetailFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+
+        <action
+            android:id="@+id/action_navigation_star_to_login_activity"
+            app:destination="@id/loginActivity"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
 
     <fragment
         android:id="@+id/newsDetailFragment"
